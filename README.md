@@ -42,7 +42,7 @@
         mkfs.xfs /dev/vg_root/lv_root
         mount /dev/vg_root/lv_root /mnt
 
-Image alt Этой командой скопируем все данные с / раздела в /mnt - итог вывода на скрине:
+Этой командой скопируем все данные с / раздела в /mnt - итог вывода на скрине:
 
         xfsdump -J - /dev/VolGroup00/LogVol00 | xfsrestore -J - /mnt
 
