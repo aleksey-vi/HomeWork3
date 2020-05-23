@@ -1,0 +1,1299 @@
+strayer@Stronghold:~$ cd OTUS/
+strayer@Stronghold:~/OTUS$ ls
+dz1  dz2
+strayer@Stronghold:~/OTUS$ mkdir dz3
+strayer@Stronghold:~/OTUS$ ls
+dz1  dz2  dz3
+strayer@Stronghold:~/OTUS$ cd dz3
+strayer@Stronghold:~/OTUS/dz3$ ls
+strayer@Stronghold:~/OTUS/dz3$ git clone https://gitlab.com/otus_linux/stands-03-lvm.git
+Клонирование в «stands-03-lvm»…
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
+Распаковка объектов: 100% (12/12), готово.
+strayer@Stronghold:~/OTUS/dz3$ ls
+stands-03-lvm
+strayer@Stronghold:~/OTUS/dz3$ cd stands-03-lvm/
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ ls
+README.md  Vagrantfile
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant up
+Bringing machine 'lvm' up with 'virtualbox' provider...
+==> lvm: Box 'centos/7' could not be found. Attempting to find and install...
+    lvm: Box Provider: virtualbox
+    lvm: Box Version: 1804.02
+==> lvm: Loading metadata for box 'centos/7'
+    lvm: URL: https://vagrantcloud.com/centos/7
+==> lvm: Adding box 'centos/7' (v1804.02) for provider: virtualbox
+    lvm: Downloading: https://vagrantcloud.com/centos/boxes/7/versions/1804.02/providers/virtualbox.box
+Download redirected to host: cloud.centos.org
+==> lvm: Successfully added box 'centos/7' (v1804.02) for 'virtualbox'!
+==> lvm: Importing base box 'centos/7'...
+==> lvm: Matching MAC address for NAT networking...
+==> lvm: Checking if box 'centos/7' version '1804.02' is up to date...
+==> lvm: Setting the name of the VM: stands-03-lvm_lvm_1590233302423_23797
+"rsync" could not be found on your PATH. Make sure that rsync
+is properly installed on your system and available on the PATH.
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$     vagrant plugin install vagrant-vbguest
+Installing the 'vagrant-vbguest' plugin. This can take a few minutes...
+Installed the plugin 'vagrant-vbguest (0.24.0)'!
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant up
+Bringing machine 'lvm' up with 'virtualbox' provider...
+==> lvm: Checking if box 'centos/7' version '1804.02' is up to date...
+==> lvm: Clearing any previously set network interfaces...
+==> lvm: Preparing network interfaces based on configuration...
+    lvm: Adapter 1: nat
+    lvm: Adapter 2: hostonly
+==> lvm: Forwarding ports...
+    lvm: 22 (guest) => 2222 (host) (adapter 1)
+==> lvm: Running 'pre-boot' VM customizations...
+==> lvm: Booting VM...
+==> lvm: Waiting for machine to boot. This may take a few minutes...
+    lvm: SSH address: 127.0.0.1:2222
+    lvm: SSH username: vagrant
+    lvm: SSH auth method: private key
+    lvm: 
+    lvm: Vagrant insecure key detected. Vagrant will automatically replace
+    lvm: this with a newly generated keypair for better security.
+    lvm: 
+    lvm: Inserting generated public key within guest...
+    lvm: Removing insecure key from the guest if it's present...
+    lvm: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> lvm: Machine booted and ready!
+[lvm] No Virtualbox Guest Additions installation found.
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.docker.ru
+ * extras: dedic.sh
+ * updates: dedic.sh
+Resolving Dependencies
+--> Running transaction check
+---> Package centos-release.x86_64 0:7-5.1804.el7.centos will be updated
+---> Package centos-release.x86_64 0:7-8.2003.0.el7.centos will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch         Version                     Repository  Size
+================================================================================
+Updating:
+ centos-release       x86_64       7-8.2003.0.el7.centos       base        26 k
+
+Transaction Summary
+================================================================================
+Upgrade  1 Package
+
+Total download size: 26 k
+Downloading packages:
+No Presto metadata available for base
+Public key for centos-release-7-8.2003.0.el7.centos.x86_64.rpm is not installed
+warning: /var/cache/yum/x86_64/7/base/packages/centos-release-7-8.2003.0.el7.centos.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-5.1804.el7.centos.x86_64 (@anaconda)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : centos-release-7-8.2003.0.el7.centos.x86_64                  1/2 
+warning: /etc/yum/vars/contentdir created as /etc/yum/vars/contentdir.rpmnew
+  Cleanup    : centos-release-7-5.1804.el7.centos.x86_64                    2/2 
+  Verifying  : centos-release-7-8.2003.0.el7.centos.x86_64                  1/2 
+  Verifying  : centos-release-7-5.1804.el7.centos.x86_64                    2/2 
+
+Updated:
+  centos-release.x86_64 0:7-8.2003.0.el7.centos                                 
+
+Complete!
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.docker.ru
+ * extras: dedic.sh
+ * updates: dedic.sh
+Resolving Dependencies
+--> Running transaction check
+---> Package kernel-devel.x86_64 0:3.10.0-862.2.3.el7 will be installed
+--> Processing Dependency: perl for package: kernel-devel-3.10.0-862.2.3.el7.x86_64
+--> Running transaction check
+---> Package perl.x86_64 4:5.16.3-295.el7 will be installed
+--> Processing Dependency: perl-libs = 4:5.16.3-295.el7 for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Scalar::Util) >= 1.10 for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl-macros for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl-libs for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(threads) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(constant) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Scalar::Util) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Getopt::Long) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(File::Temp) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(File::Spec::Unix) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(File::Spec::Functions) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(File::Spec) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(File::Path) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Exporter) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Cwd) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: perl(Carp) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Processing Dependency: libperl.so()(64bit) for package: 4:perl-5.16.3-295.el7.x86_64
+--> Running transaction check
+---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+---> Package perl-Getopt-Long.noarch 0:2.40-3.el7 will be installed
+--> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-3.el7.noarch
+--> Processing Dependency: perl(Text::ParseWords) for package: perl-Getopt-Long-2.40-3.el7.noarch
+---> Package perl-PathTools.x86_64 0:3.40-5.el7 will be installed
+---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+--> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+--> Processing Dependency: perl(Encode) for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+---> Package perl-Socket.x86_64 0:2.010-5.el7 will be installed
+---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+---> Package perl-Time-HiRes.x86_64 4:1.9725-3.el7 will be installed
+---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+---> Package perl-libs.x86_64 4:5.16.3-295.el7 will be installed
+---> Package perl-macros.x86_64 4:5.16.3-295.el7 will be installed
+---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+--> Running transaction check
+---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+---> Package perl-Pod-Escapes.noarch 1:1.04-295.el7 will be installed
+---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+--> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+--> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+--> Running transaction check
+---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+--> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+--> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+--> Running transaction check
+---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch    Version               Repository          Size
+================================================================================
+Installing:
+ kernel-devel            x86_64  3.10.0-862.2.3.el7    C7.5.1804-updates   16 M
+Installing for dependencies:
+ perl                    x86_64  4:5.16.3-295.el7      base               8.0 M
+ perl-Carp               noarch  1.26-244.el7          C7.0.1406-base      19 k
+ perl-Encode             x86_64  2.51-7.el7            C7.0.1406-base     1.5 M
+ perl-Exporter           noarch  5.68-3.el7            C7.0.1406-base      28 k
+ perl-File-Path          noarch  2.09-2.el7            C7.0.1406-base      26 k
+ perl-File-Temp          noarch  0.23.01-3.el7         C7.0.1406-base      56 k
+ perl-Filter             x86_64  1.49-3.el7            C7.0.1406-base      76 k
+ perl-Getopt-Long        noarch  2.40-3.el7            C7.5.1804-base      56 k
+ perl-HTTP-Tiny          noarch  0.033-3.el7           C7.0.1406-base      38 k
+ perl-PathTools          x86_64  3.40-5.el7            C7.0.1406-base      82 k
+ perl-Pod-Escapes        noarch  1:1.04-295.el7        base                51 k
+ perl-Pod-Perldoc        noarch  3.20-4.el7            C7.0.1406-base      87 k
+ perl-Pod-Simple         noarch  1:3.28-4.el7          C7.0.1406-base     216 k
+ perl-Pod-Usage          noarch  1.63-3.el7            C7.0.1406-base      27 k
+ perl-Scalar-List-Utils  x86_64  1.27-248.el7          C7.0.1406-base      36 k
+ perl-Socket             x86_64  2.010-5.el7           base                49 k
+ perl-Storable           x86_64  2.45-3.el7            C7.0.1406-base      77 k
+ perl-Text-ParseWords    noarch  3.29-4.el7            C7.0.1406-base      14 k
+ perl-Time-HiRes         x86_64  4:1.9725-3.el7        C7.0.1406-base      45 k
+ perl-Time-Local         noarch  1.2300-2.el7          C7.0.1406-base      24 k
+ perl-constant           noarch  1.27-2.el7            C7.0.1406-base      19 k
+ perl-libs               x86_64  4:5.16.3-295.el7      base               689 k
+ perl-macros             x86_64  4:5.16.3-295.el7      base                44 k
+ perl-parent             noarch  1:0.225-244.el7       C7.0.1406-base      12 k
+ perl-podlators          noarch  2.5.1-3.el7           C7.0.1406-base     112 k
+ perl-threads            x86_64  1.87-4.el7            C7.0.1406-base      49 k
+ perl-threads-shared     x86_64  1.43-6.el7            C7.0.1406-base      39 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+27 Dependent packages)
+
+Total download size: 27 M
+Installed size: 73 M
+Downloading packages:
+--------------------------------------------------------------------------------
+Total                                              1.8 MB/s |  27 MB  00:14     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:perl-parent-0.225-244.el7.noarch                          1/28 
+  Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                           2/28 
+  Installing : perl-podlators-2.5.1-3.el7.noarch                           3/28 
+  Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                          4/28 
+  Installing : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      5/28 
+  Installing : perl-Text-ParseWords-3.29-4.el7.noarch                      6/28 
+  Installing : perl-Encode-2.51-7.el7.x86_64                               7/28 
+  Installing : perl-Pod-Usage-1.63-3.el7.noarch                            8/28 
+  Installing : 4:perl-libs-5.16.3-295.el7.x86_64                           9/28 
+  Installing : 4:perl-macros-5.16.3-295.el7.x86_64                        10/28 
+  Installing : perl-Storable-2.45-3.el7.x86_64                            11/28 
+  Installing : perl-Exporter-5.68-3.el7.noarch                            12/28 
+  Installing : perl-constant-1.27-2.el7.noarch                            13/28 
+  Installing : perl-Socket-2.010-5.el7.x86_64                             14/28 
+  Installing : perl-Time-Local-1.2300-2.el7.noarch                        15/28 
+  Installing : perl-Carp-1.26-244.el7.noarch                              16/28 
+  Installing : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      17/28 
+  Installing : perl-PathTools-3.40-5.el7.x86_64                           18/28 
+  Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/28 
+  Installing : perl-File-Temp-0.23.01-3.el7.noarch                        20/28 
+  Installing : perl-File-Path-2.09-2.el7.noarch                           21/28 
+  Installing : perl-threads-shared-1.43-6.el7.x86_64                      22/28 
+  Installing : perl-threads-1.87-4.el7.x86_64                             23/28 
+  Installing : perl-Filter-1.49-3.el7.x86_64                              24/28 
+  Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                        25/28 
+  Installing : perl-Getopt-Long-2.40-3.el7.noarch                         26/28 
+  Installing : 4:perl-5.16.3-295.el7.x86_64                               27/28 
+  Installing : kernel-devel-3.10.0-862.2.3.el7.x86_64                     28/28 
+  Verifying  : kernel-devel-3.10.0-862.2.3.el7.x86_64                      1/28 
+  Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                           2/28 
+  Verifying  : perl-threads-shared-1.43-6.el7.x86_64                       3/28 
+  Verifying  : perl-Storable-2.45-3.el7.x86_64                             4/28 
+  Verifying  : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      5/28 
+  Verifying  : perl-Exporter-5.68-3.el7.noarch                             6/28 
+  Verifying  : perl-constant-1.27-2.el7.noarch                             7/28 
+  Verifying  : perl-PathTools-3.40-5.el7.x86_64                            8/28 
+  Verifying  : perl-Socket-2.010-5.el7.x86_64                              9/28 
+  Verifying  : 1:perl-parent-0.225-244.el7.noarch                         10/28 
+  Verifying  : 4:perl-libs-5.16.3-295.el7.x86_64                          11/28 
+  Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                        12/28 
+  Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                        13/28 
+  Verifying  : perl-Time-Local-1.2300-2.el7.noarch                        14/28 
+  Verifying  : 4:perl-macros-5.16.3-295.el7.x86_64                        15/28 
+  Verifying  : 4:perl-5.16.3-295.el7.x86_64                               16/28 
+  Verifying  : perl-Carp-1.26-244.el7.noarch                              17/28 
+  Verifying  : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      18/28 
+  Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/28 
+  Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                           20/28 
+  Verifying  : perl-Encode-2.51-7.el7.x86_64                              21/28 
+  Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                         22/28 
+  Verifying  : perl-podlators-2.5.1-3.el7.noarch                          23/28 
+  Verifying  : perl-File-Path-2.09-2.el7.noarch                           24/28 
+  Verifying  : perl-threads-1.87-4.el7.x86_64                             25/28 
+  Verifying  : perl-Filter-1.49-3.el7.x86_64                              26/28 
+  Verifying  : perl-Getopt-Long-2.40-3.el7.noarch                         27/28 
+  Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                     28/28 
+
+Installed:
+  kernel-devel.x86_64 0:3.10.0-862.2.3.el7                                      
+
+Dependency Installed:
+  perl.x86_64 4:5.16.3-295.el7                                                  
+  perl-Carp.noarch 0:1.26-244.el7                                               
+  perl-Encode.x86_64 0:2.51-7.el7                                               
+  perl-Exporter.noarch 0:5.68-3.el7                                             
+  perl-File-Path.noarch 0:2.09-2.el7                                            
+  perl-File-Temp.noarch 0:0.23.01-3.el7                                         
+  perl-Filter.x86_64 0:1.49-3.el7                                               
+  perl-Getopt-Long.noarch 0:2.40-3.el7                                          
+  perl-HTTP-Tiny.noarch 0:0.033-3.el7                                           
+  perl-PathTools.x86_64 0:3.40-5.el7                                            
+  perl-Pod-Escapes.noarch 1:1.04-295.el7                                        
+  perl-Pod-Perldoc.noarch 0:3.20-4.el7                                          
+  perl-Pod-Simple.noarch 1:3.28-4.el7                                           
+  perl-Pod-Usage.noarch 0:1.63-3.el7                                            
+  perl-Scalar-List-Utils.x86_64 0:1.27-248.el7                                  
+  perl-Socket.x86_64 0:2.010-5.el7                                              
+  perl-Storable.x86_64 0:2.45-3.el7                                             
+  perl-Text-ParseWords.noarch 0:3.29-4.el7                                      
+  perl-Time-HiRes.x86_64 4:1.9725-3.el7                                         
+  perl-Time-Local.noarch 0:1.2300-2.el7                                         
+  perl-constant.noarch 0:1.27-2.el7                                             
+  perl-libs.x86_64 4:5.16.3-295.el7                                             
+  perl-macros.x86_64 4:5.16.3-295.el7                                           
+  perl-parent.noarch 1:0.225-244.el7                                            
+  perl-podlators.noarch 0:2.5.1-3.el7                                           
+  perl-threads.x86_64 0:1.87-4.el7                                              
+  perl-threads-shared.x86_64 0:1.43-6.el7                                       
+
+Complete!
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.docker.ru
+ * extras: dedic.sh
+ * updates: dedic.sh
+Package 4:perl-5.16.3-295.el7.x86_64 already installed and latest version
+Package bzip2-1.0.6-13.el7.x86_64 already installed and latest version
+Resolving Dependencies
+--> Running transaction check
+---> Package binutils.x86_64 0:2.27-27.base.el7 will be updated
+---> Package binutils.x86_64 0:2.27-43.base.el7_8.1 will be an update
+---> Package elfutils-libelf-devel.x86_64 0:0.176-4.el7 will be installed
+--> Processing Dependency: elfutils-libelf(x86-64) = 0.176-4.el7 for package: elfutils-libelf-devel-0.176-4.el7.x86_64
+--> Processing Dependency: pkgconfig(zlib) for package: elfutils-libelf-devel-0.176-4.el7.x86_64
+---> Package gcc.x86_64 0:4.8.5-39.el7 will be installed
+--> Processing Dependency: libgomp = 4.8.5-39.el7 for package: gcc-4.8.5-39.el7.x86_64
+--> Processing Dependency: cpp = 4.8.5-39.el7 for package: gcc-4.8.5-39.el7.x86_64
+--> Processing Dependency: libgcc >= 4.8.5-39.el7 for package: gcc-4.8.5-39.el7.x86_64
+--> Processing Dependency: glibc-devel >= 2.2.90-12 for package: gcc-4.8.5-39.el7.x86_64
+--> Processing Dependency: libmpfr.so.4()(64bit) for package: gcc-4.8.5-39.el7.x86_64
+--> Processing Dependency: libmpc.so.3()(64bit) for package: gcc-4.8.5-39.el7.x86_64
+---> Package make.x86_64 1:3.82-23.el7 will be updated
+---> Package make.x86_64 1:3.82-24.el7 will be an update
+--> Running transaction check
+---> Package cpp.x86_64 0:4.8.5-39.el7 will be installed
+---> Package elfutils-libelf.x86_64 0:0.170-4.el7 will be updated
+--> Processing Dependency: elfutils-libelf(x86-64) = 0.170-4.el7 for package: elfutils-libs-0.170-4.el7.x86_64
+---> Package elfutils-libelf.x86_64 0:0.176-4.el7 will be an update
+---> Package glibc-devel.x86_64 0:2.17-307.el7.1 will be installed
+--> Processing Dependency: glibc-headers = 2.17-307.el7.1 for package: glibc-devel-2.17-307.el7.1.x86_64
+--> Processing Dependency: glibc = 2.17-307.el7.1 for package: glibc-devel-2.17-307.el7.1.x86_64
+--> Processing Dependency: glibc-headers for package: glibc-devel-2.17-307.el7.1.x86_64
+---> Package libgcc.x86_64 0:4.8.5-28.el7 will be updated
+---> Package libgcc.x86_64 0:4.8.5-39.el7 will be an update
+---> Package libgomp.x86_64 0:4.8.5-28.el7 will be updated
+---> Package libgomp.x86_64 0:4.8.5-39.el7 will be an update
+---> Package libmpc.x86_64 0:1.0.1-3.el7 will be installed
+---> Package mpfr.x86_64 0:3.1.1-4.el7 will be installed
+---> Package zlib-devel.x86_64 0:1.2.7-18.el7 will be installed
+--> Processing Dependency: zlib = 1.2.7-18.el7 for package: zlib-devel-1.2.7-18.el7.x86_64
+--> Running transaction check
+---> Package elfutils-libs.x86_64 0:0.170-4.el7 will be updated
+---> Package elfutils-libs.x86_64 0:0.176-4.el7 will be an update
+---> Package glibc.x86_64 0:2.17-222.el7 will be updated
+--> Processing Dependency: glibc = 2.17-222.el7 for package: glibc-common-2.17-222.el7.x86_64
+---> Package glibc.x86_64 0:2.17-307.el7.1 will be an update
+---> Package glibc-headers.x86_64 0:2.17-307.el7.1 will be installed
+--> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.17-307.el7.1.x86_64
+--> Processing Dependency: kernel-headers for package: glibc-headers-2.17-307.el7.1.x86_64
+---> Package zlib.x86_64 0:1.2.7-17.el7 will be updated
+---> Package zlib.x86_64 0:1.2.7-18.el7 will be an update
+--> Running transaction check
+---> Package glibc-common.x86_64 0:2.17-222.el7 will be updated
+---> Package glibc-common.x86_64 0:2.17-307.el7.1 will be an update
+---> Package kernel-headers.x86_64 0:3.10.0-1127.8.2.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                  Arch      Version                    Repository  Size
+================================================================================
+Installing:
+ elfutils-libelf-devel    x86_64    0.176-4.el7                base        40 k
+ gcc                      x86_64    4.8.5-39.el7               base        16 M
+Updating:
+ binutils                 x86_64    2.27-43.base.el7_8.1       updates    5.9 M
+ make                     x86_64    1:3.82-24.el7              base       421 k
+Installing for dependencies:
+ cpp                      x86_64    4.8.5-39.el7               base       5.9 M
+ glibc-devel              x86_64    2.17-307.el7.1             base       1.1 M
+ glibc-headers            x86_64    2.17-307.el7.1             base       689 k
+ kernel-headers           x86_64    3.10.0-1127.8.2.el7        updates    8.9 M
+ libmpc                   x86_64    1.0.1-3.el7                base        51 k
+ mpfr                     x86_64    3.1.1-4.el7                base       203 k
+ zlib-devel               x86_64    1.2.7-18.el7               base        50 k
+Updating for dependencies:
+ elfutils-libelf          x86_64    0.176-4.el7                base       195 k
+ elfutils-libs            x86_64    0.176-4.el7                base       291 k
+ glibc                    x86_64    2.17-307.el7.1             base       3.6 M
+ glibc-common             x86_64    2.17-307.el7.1             base        11 M
+ libgcc                   x86_64    4.8.5-39.el7               base       102 k
+ libgomp                  x86_64    4.8.5-39.el7               base       158 k
+ zlib                     x86_64    1.2.7-18.el7               base        90 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages (+7 Dependent packages)
+Upgrade  2 Packages (+7 Dependent packages)
+
+Total download size: 55 M
+Downloading packages:
+No Presto metadata available for base
+No Presto metadata available for updates
+--------------------------------------------------------------------------------
+Total                                               10 MB/s |  55 MB  00:05     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : libgcc-4.8.5-39.el7.x86_64                                  1/27 
+  Updating   : glibc-2.17-307.el7.1.x86_64                                 2/27 
+warning: /etc/nsswitch.conf created as /etc/nsswitch.conf.rpmnew
+  Updating   : glibc-common-2.17-307.el7.1.x86_64                          3/27 
+  Updating   : zlib-1.2.7-18.el7.x86_64                                    4/27 
+  Installing : mpfr-3.1.1-4.el7.x86_64                                     5/27 
+  Installing : libmpc-1.0.1-3.el7.x86_64                                   6/27 
+  Updating   : elfutils-libelf-0.176-4.el7.x86_64                          7/27 
+  Installing : cpp-4.8.5-39.el7.x86_64                                     8/27 
+  Installing : zlib-devel-1.2.7-18.el7.x86_64                              9/27 
+  Updating   : binutils-2.27-43.base.el7_8.1.x86_64                       10/27 
+  Updating   : libgomp-4.8.5-39.el7.x86_64                                11/27 
+  Installing : kernel-headers-3.10.0-1127.8.2.el7.x86_64                  12/27 
+  Installing : glibc-headers-2.17-307.el7.1.x86_64                        13/27 
+  Installing : glibc-devel-2.17-307.el7.1.x86_64                          14/27 
+  Installing : gcc-4.8.5-39.el7.x86_64                                    15/27 
+  Installing : elfutils-libelf-devel-0.176-4.el7.x86_64                   16/27 
+  Updating   : elfutils-libs-0.176-4.el7.x86_64                           17/27 
+  Updating   : 1:make-3.82-24.el7.x86_64                                  18/27 
+  Cleanup    : elfutils-libs-0.170-4.el7.x86_64                           19/27 
+  Cleanup    : elfutils-libelf-0.170-4.el7.x86_64                         20/27 
+  Cleanup    : binutils-2.27-27.base.el7.x86_64                           21/27 
+  Cleanup    : zlib-1.2.7-17.el7.x86_64                                   22/27 
+  Cleanup    : 1:make-3.82-23.el7.x86_64                                  23/27 
+  Cleanup    : libgomp-4.8.5-28.el7.x86_64                                24/27 
+  Cleanup    : glibc-common-2.17-222.el7.x86_64                           25/27 
+  Cleanup    : glibc-2.17-222.el7.x86_64                                  26/27 
+  Cleanup    : libgcc-4.8.5-28.el7.x86_64                                 27/27 
+  Verifying  : gcc-4.8.5-39.el7.x86_64                                     1/27 
+  Verifying  : zlib-devel-1.2.7-18.el7.x86_64                              2/27 
+  Verifying  : zlib-1.2.7-18.el7.x86_64                                    3/27 
+  Verifying  : binutils-2.27-43.base.el7_8.1.x86_64                        4/27 
+  Verifying  : glibc-common-2.17-307.el7.1.x86_64                          5/27 
+  Verifying  : libgcc-4.8.5-39.el7.x86_64                                  6/27 
+  Verifying  : libgomp-4.8.5-39.el7.x86_64                                 7/27 
+  Verifying  : 1:make-3.82-24.el7.x86_64                                   8/27 
+  Verifying  : glibc-2.17-307.el7.1.x86_64                                 9/27 
+  Verifying  : kernel-headers-3.10.0-1127.8.2.el7.x86_64                  10/27 
+  Verifying  : elfutils-libelf-0.176-4.el7.x86_64                         11/27 
+  Verifying  : libmpc-1.0.1-3.el7.x86_64                                  12/27 
+  Verifying  : elfutils-libs-0.176-4.el7.x86_64                           13/27 
+  Verifying  : glibc-headers-2.17-307.el7.1.x86_64                        14/27 
+  Verifying  : elfutils-libelf-devel-0.176-4.el7.x86_64                   15/27 
+  Verifying  : mpfr-3.1.1-4.el7.x86_64                                    16/27 
+  Verifying  : cpp-4.8.5-39.el7.x86_64                                    17/27 
+  Verifying  : glibc-devel-2.17-307.el7.1.x86_64                          18/27 
+  Verifying  : libgomp-4.8.5-28.el7.x86_64                                19/27 
+  Verifying  : libgcc-4.8.5-28.el7.x86_64                                 20/27 
+  Verifying  : binutils-2.27-27.base.el7.x86_64                           21/27 
+  Verifying  : elfutils-libs-0.170-4.el7.x86_64                           22/27 
+  Verifying  : glibc-2.17-222.el7.x86_64                                  23/27 
+  Verifying  : zlib-1.2.7-17.el7.x86_64                                   24/27 
+  Verifying  : 1:make-3.82-23.el7.x86_64                                  25/27 
+  Verifying  : glibc-common-2.17-222.el7.x86_64                           26/27 
+  Verifying  : elfutils-libelf-0.170-4.el7.x86_64                         27/27 
+
+Installed:
+  elfutils-libelf-devel.x86_64 0:0.176-4.el7      gcc.x86_64 0:4.8.5-39.el7     
+
+Dependency Installed:
+  cpp.x86_64 0:4.8.5-39.el7                                                     
+  glibc-devel.x86_64 0:2.17-307.el7.1                                           
+  glibc-headers.x86_64 0:2.17-307.el7.1                                         
+  kernel-headers.x86_64 0:3.10.0-1127.8.2.el7                                   
+  libmpc.x86_64 0:1.0.1-3.el7                                                   
+  mpfr.x86_64 0:3.1.1-4.el7                                                     
+  zlib-devel.x86_64 0:1.2.7-18.el7                                              
+
+Updated:
+  binutils.x86_64 0:2.27-43.base.el7_8.1        make.x86_64 1:3.82-24.el7       
+
+Dependency Updated:
+  elfutils-libelf.x86_64 0:0.176-4.el7   elfutils-libs.x86_64 0:0.176-4.el7    
+  glibc.x86_64 0:2.17-307.el7.1          glibc-common.x86_64 0:2.17-307.el7.1  
+  libgcc.x86_64 0:4.8.5-39.el7           libgomp.x86_64 0:4.8.5-39.el7         
+  zlib.x86_64 0:1.2.7-18.el7            
+
+Complete!
+Copy iso file /usr/share/virtualbox/VBoxGuestAdditions.iso into the box /tmp/VBoxGuestAdditions.iso
+Mounting Virtualbox Guest Additions ISO to: /mnt
+mount: /dev/loop0 is write-protected, mounting read-only
+Installing Virtualbox Guest Additions 6.1.8 - guest version is unknown
+Verifying archive integrity... All good.
+Uncompressing VirtualBox 6.1.8 Guest Additions for Linux........
+VirtualBox Guest Additions installer
+Copying additional installer modules ...
+Installing additional modules ...
+VirtualBox Guest Additions: Starting.
+VirtualBox Guest Additions: Building the VirtualBox Guest Additions kernel 
+modules.  This may take a while.
+VirtualBox Guest Additions: To build modules for other installed kernels, run
+VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup <version>
+VirtualBox Guest Additions: or
+VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup all
+VirtualBox Guest Additions: Building the modules for kernel 
+3.10.0-862.2.3.el7.x86_64.
+Redirecting to /bin/systemctl start vboxadd.service
+Redirecting to /bin/systemctl start vboxadd-service.service
+Unmounting Virtualbox Guest Additions ISO from: /mnt
+==> lvm: Checking for guest additions in VM...
+==> lvm: Setting hostname...
+==> lvm: Configuring and enabling network interfaces...
+==> lvm: Mounting shared folders...
+    lvm: /vagrant => /home/strayer/OTUS/dz3/stands-03-lvm
+==> lvm: Running provisioner: shell...
+    lvm: Running: inline script
+    lvm: Loaded plugins: fastestmirror
+    lvm: Loading mirror speeds from cached hostfile
+    lvm:  * base: mirror.docker.ru
+    lvm:  * extras: dedic.sh
+    lvm:  * updates: dedic.sh
+    lvm: Resolving Dependencies
+    lvm: --> Running transaction check
+    lvm: ---> Package gdisk.x86_64 0:0.8.10-3.el7 will be installed
+    lvm: ---> Package hdparm.x86_64 0:9.43-5.el7 will be installed
+    lvm: ---> Package mdadm.x86_64 0:4.1-4.el7 will be installed
+    lvm: --> Processing Dependency: libreport-filesystem for package: mdadm-4.1-4.el7.x86_64
+    lvm: ---> Package smartmontools.x86_64 1:7.0-2.el7 will be installed
+    lvm: --> Processing Dependency: mailx for package: 1:smartmontools-7.0-2.el7.x86_64
+    lvm: --> Running transaction check
+    lvm: ---> Package libreport-filesystem.x86_64 0:2.1.11-53.el7.centos will be installed
+    lvm: ---> Package mailx.x86_64 0:12.5-19.el7 will be installed
+    lvm: --> Finished Dependency Resolution
+    lvm: 
+    lvm: Dependencies Resolved
+    lvm: 
+    lvm: ================================================================================
+    lvm:  Package                  Arch       Version                     Repository
+    lvm:                                                                            Size
+    lvm: ================================================================================
+    lvm: Installing:
+    lvm:  gdisk                    x86_64     0.8.10-3.el7                base     190 k
+    lvm:  hdparm                   x86_64     9.43-5.el7                  base      83 k
+    lvm:  mdadm                    x86_64     4.1-4.el7                   base     439 k
+    lvm:  smartmontools            x86_64     1:7.0-2.el7                 base     546 k
+    lvm: Installing for dependencies:
+    lvm:  libreport-filesystem     x86_64     2.1.11-53.el7.centos        base      41 k
+    lvm:  mailx                    x86_64     12.5-19.el7                 base     245 k
+    lvm: 
+    lvm: Transaction Summary
+    lvm: ================================================================================
+    lvm: Install  4 Packages (+2 Dependent packages)
+    lvm: 
+    lvm: Total download size: 1.5 M
+    lvm: Installed size: 4.3 M
+    lvm: Downloading packages:
+    lvm: --------------------------------------------------------------------------------
+    lvm: Total                                              4.1 MB/s | 1.5 MB  00:00     
+    lvm: Running transaction check
+    lvm: Running transaction test
+    lvm: Transaction test succeeded
+    lvm: Running transaction
+    lvm:   Installing : libreport-filesystem-2.1.11-53.el7.centos.x86_64             1/6
+    lvm:  
+    lvm:   Installing : mailx-12.5-19.el7.x86_64                                     2/6
+    lvm:  
+    lvm:   Installing : 1:smartmontools-7.0-2.el7.x86_64                             3/6
+    lvm:  
+    lvm:   Installing : mdadm-4.1-4.el7.x86_64                                       4/6
+    lvm:  
+    lvm:   Installing : hdparm-9.43-5.el7.x86_64                                     5/6
+    lvm:  
+    lvm:   Installing : gdisk-0.8.10-3.el7.x86_64                                    6/6
+    lvm:  
+    lvm:   Verifying  : 1:smartmontools-7.0-2.el7.x86_64                             1/6
+    lvm:  
+    lvm:   Verifying  : gdisk-0.8.10-3.el7.x86_64                                    2/6
+    lvm:  
+    lvm:   Verifying  : mailx-12.5-19.el7.x86_64                                     3/6
+    lvm:  
+    lvm:   Verifying  : hdparm-9.43-5.el7.x86_64                                     4/6
+    lvm:  
+    lvm:   Verifying  : mdadm-4.1-4.el7.x86_64                                       5/6
+    lvm:  
+    lvm:   Verifying  : libreport-filesystem-2.1.11-53.el7.centos.x86_64             6/6
+    lvm:  
+    lvm: 
+    lvm: Installed:
+    lvm:   gdisk.x86_64 0:0.8.10-3.el7          hdparm.x86_64 0:9.43-5.el7               
+    lvm:   mdadm.x86_64 0:4.1-4.el7             smartmontools.x86_64 1:7.0-2.el7         
+    lvm: 
+    lvm: Dependency Installed:
+    lvm:   libreport-filesystem.x86_64 0:2.1.11-53.el7.centos mailx.x86_64 0:12.5-19.el7
+    lvm: 
+    lvm: Complete!
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant ssh stands-03
+The machine with the name 'stands-03' was not found configured for
+this Vagrant environment.
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant ssh otuslinux
+The machine with the name 'otuslinux' was not found configured for
+this Vagrant environment.
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant ssh lvm
+[vagrant@lvm ~]$ lsblk
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                       8:0    0   40G  0 disk 
+├─sda1                    8:1    0    1M  0 part 
+├─sda2                    8:2    0    1G  0 part /boot
+└─sda3                    8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /
+  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+sdb                       8:16   0   10G  0 disk 
+sdc                       8:32   0    2G  0 disk 
+sdd                       8:48   0    1G  0 disk 
+sde                       8:64   0    1G  0 disk 
+[vagrant@lvm ~]$ sudo yum install xfsdump
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.docker.ru
+ * extras: dedic.sh
+ * updates: dedic.sh
+Resolving Dependencies
+--> Running transaction check
+---> Package xfsdump.x86_64 0:3.1.7-1.el7 will be installed
+--> Processing Dependency: attr >= 2.0.0 for package: xfsdump-3.1.7-1.el7.x86_64
+--> Running transaction check
+---> Package attr.x86_64 0:2.4.46-13.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch            Version                   Repository     Size
+================================================================================
+Installing:
+ xfsdump          x86_64          3.1.7-1.el7               base          308 k
+Installing for dependencies:
+ attr             x86_64          2.4.46-13.el7             base           66 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 374 k
+Installed size: 1.1 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/2): attr-2.4.46-13.el7.x86_64.rpm                       |  66 kB   00:00     
+(2/2): xfsdump-3.1.7-1.el7.x86_64.rpm                      | 308 kB   00:00     
+--------------------------------------------------------------------------------
+Total                                              1.3 MB/s | 374 kB  00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : attr-2.4.46-13.el7.x86_64                                    1/2 
+  Installing : xfsdump-3.1.7-1.el7.x86_64                                   2/2 
+  Verifying  : attr-2.4.46-13.el7.x86_64                                    1/2 
+  Verifying  : xfsdump-3.1.7-1.el7.x86_64                                   2/2 
+
+Installed:
+  xfsdump.x86_64 0:3.1.7-1.el7                                                  
+
+Dependency Installed:
+  attr.x86_64 0:2.4.46-13.el7                                                   
+
+Complete!
+[vagrant@lvm ~]$  pvcreate /dev/sdb
+  WARNING: Running as a non-root user. Functionality may be unavailable.
+  /run/lvm/lvmetad.socket: access failed: Permission denied
+  WARNING: Failed to connect to lvmetad. Falling back to device scanning.
+  /run/lock/lvm/P_orphans:aux: open failed: Permission denied
+  Can't get lock for orphan PVs.
+[vagrant@lvm ~]$ su
+Password: 
+[root@lvm vagrant]#  pvcreate /dev/sdb
+  Physical volume "/dev/sdb" successfully created.
+[root@lvm vagrant]#  vgcreate vg_root /dev/sdb
+  Volume group "vg_root" successfully created
+[root@lvm vagrant]# lvcreate -n lv_root -l +100%FREE /dev/vg_root
+  Logical volume "lv_root" created.
+[root@lvm vagrant]#  mkfs.xfs /dev/vg_root/lv_root
+meta-data=/dev/vg_root/lv_root   isize=512    agcount=4, agsize=655104 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=2620416, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+[root@lvm vagrant]#  mount /dev/vg_root/lv_root /mnt
+[root@lvm vagrant]# lsblk
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                       8:0    0   40G  0 disk 
+├─sda1                    8:1    0    1M  0 part 
+├─sda2                    8:2    0    1G  0 part /boot
+└─sda3                    8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /
+  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+sdb                       8:16   0   10G  0 disk 
+└─vg_root-lv_root       253:2    0   10G  0 lvm  /mnt
+sdc                       8:32   0    2G  0 disk 
+sdd                       8:48   0    1G  0 disk 
+sde                       8:64   0    1G  0 disk 
+[root@lvm vagrant]# xfsdump -J - /dev/VolGroup00/LogVol00 | xfsrestore -J - /mnt
+xfsrestore: using file dump (drive_simple) strategy
+xfsrestore: version 3.1.7 (dump format 3.0)
+xfsdump: using file dump (drive_simple) strategy
+xfsdump: version 3.1.7 (dump format 3.0)
+xfsdump: level 0 dump of lvm:/
+xfsdump: dump date: Sat May 23 11:50:18 2020
+xfsdump: session id: 063a84d5-9be7-49a1-8fe7-24e071e7d3fc
+xfsdump: session label: ""
+xfsrestore: searching media for dump
+xfsdump: ino map phase 1: constructing initial dump list
+xfsdump: ino map phase 2: skipping (no pruning necessary)
+xfsdump: ino map phase 3: skipping (only one dump stream)
+xfsdump: ino map construction complete
+xfsdump: estimated dump size: 1715342912 bytes
+xfsdump: creating dump session media file 0 (media 0, file 0)
+xfsdump: dumping ino map
+xfsdump: dumping directories
+xfsrestore: examining media file 0
+xfsrestore: dump description: 
+xfsrestore: hostname: lvm
+xfsrestore: mount point: /
+xfsrestore: volume: /dev/mapper/VolGroup00-LogVol00
+xfsrestore: session time: Sat May 23 11:50:18 2020
+xfsrestore: level: 0
+xfsrestore: session label: ""
+xfsrestore: media label: ""
+xfsrestore: file system id: b60e9498-0baa-4d9f-90aa-069048217fee
+xfsrestore: session id: 063a84d5-9be7-49a1-8fe7-24e071e7d3fc
+xfsrestore: media id: 9081ced2-d0e1-4186-9a9d-ea6b84266720
+xfsrestore: searching media for directory dump
+xfsrestore: reading directories
+xfsdump: dumping non-directory files
+xfsrestore: 7147 directories and 44626 entries processed
+xfsrestore: directory post-processing
+xfsrestore: restoring non-directory files
+xfsdump: ending media file
+xfsdump: media file size 1671304568 bytes
+xfsdump: dump size (non-dir files) : 1644714792 bytes
+xfsdump: dump complete: 62 seconds elapsed
+xfsdump: Dump Status: SUCCESS
+xfsrestore: restore complete: 65 seconds elapsed
+xfsrestore: Restore Status: SUCCESS
+[root@lvm vagrant]# ls /mnt
+bin   dev  home  lib64  mnt  proc  run   srv  tmp  vagrant
+boot  etc  lib   media  opt  root  sbin  sys  usr  var
+[root@lvm vagrant]# ll /mnt
+total 12
+lrwxrwxrwx.  1 root root    7 May 23 11:50 bin -> usr/bin
+drwxr-xr-x.  2 root root    6 May 12  2018 boot
+drwxr-xr-x.  2 root root    6 May 12  2018 dev
+drwxr-xr-x. 80 root root 8192 May 23 11:37 etc
+drwxr-xr-x.  3 root root   21 May 12  2018 home
+lrwxrwxrwx.  1 root root    7 May 23 11:50 lib -> usr/lib
+lrwxrwxrwx.  1 root root    9 May 23 11:50 lib64 -> usr/lib64
+drwxr-xr-x.  2 root root    6 Apr 11  2018 media
+drwxr-xr-x.  2 root root    6 Apr 11  2018 mnt
+drwxr-xr-x.  3 root root   38 May 23 11:35 opt
+drwxr-xr-x.  2 root root    6 May 12  2018 proc
+dr-xr-x---.  3 root root  149 May 23 11:37 root
+drwxr-xr-x.  2 root root    6 May 12  2018 run
+lrwxrwxrwx.  1 root root    8 May 23 11:50 sbin -> usr/sbin
+drwxr-xr-x.  2 root root    6 Apr 11  2018 srv
+drwxr-xr-x.  2 root root    6 May 12  2018 sys
+drwxrwxrwt.  8 root root  225 May 23 11:48 tmp
+drwxr-xr-x. 13 root root  155 May 12  2018 usr
+drwxr-xr-x.  2 root root    6 May 23 11:37 vagrant
+drwxr-xr-x. 18 root root  254 May 23 11:33 var
+[root@lvm vagrant]#  for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done
+[root@lvm vagrant]#  chroot /mnt/
+[root@lvm /]#  grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-862.2.3.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img
+done
+[root@lvm /]#  cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo $i|sed "s/initramfs-//g; s/.img//g"` --force; done
+Executing: /usr/bin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64 --force
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** No early-microcode cpio image needed ***
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+[root@lvm boot]# sudo yum install nano
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.docker.ru
+ * extras: dedic.sh
+ * updates: dedic.sh
+Resolving Dependencies
+--> Running transaction check
+---> Package nano.x86_64 0:2.3.1-10.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package        Arch             Version                   Repository      Size
+================================================================================
+Installing:
+ nano           x86_64           2.3.1-10.el7              base           440 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 440 k
+Installed size: 1.6 M
+Is this ok [y/d/N]: y
+Downloading packages:
+nano-2.3.1-10.el7.x86_64.rpm                               | 440 kB   00:01     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : nano-2.3.1-10.el7.x86_64                                     1/1 
+  Verifying  : nano-2.3.1-10.el7.x86_64                                     1/1 
+
+Installed:
+  nano.x86_64 0:2.3.1-10.el7                                                    
+
+Complete!
+[root@lvm boot]# nano /boot/grub2/grub.cfg
+[root@lvm boot]# grep d.lvm.lv=VolGroup00/LogVol00 /boot/grub2/grub.cfg
+	linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/vg_root-lv_root ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet 
+[root@lvm boot]# grep lvm /boot/grub2/grub.cfg
+	linux16 /vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/vg_root-lv_root ro no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto rd.lvm.lv=VolGroup00/LogVol00 rd.lvm.lv=VolGroup00/LogVol01 rhgb quiet 
+[root@lvm boot]# cd /boot/grub2/
+[root@lvm grub2]# ls
+device.map  fonts  grub.cfg  grubenv  i386-pc  locale
+[root@lvm grub2]# cd ..
+[root@lvm boot]# cd ..
+[root@lvm /]# reboot
+Running in chroot, ignoring request.
+[root@lvm /]# exit
+exit
+[root@lvm vagrant]# reboot
+PolicyKit daemon disconnected from the bus.
+We are no longer a registered authentication agent.
+Connection to 127.0.0.1 closed by remote host.
+Connection to 127.0.0.1 closed.
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant ssh lvm
+Last login: Sat May 23 11:46:05 2020 from 10.0.2.2
+[vagrant@lvm ~]$ lsblk
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                       8:0    0   40G  0 disk 
+├─sda1                    8:1    0    1M  0 part 
+├─sda2                    8:2    0    1G  0 part /boot
+└─sda3                    8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+  └─VolGroup00-LogVol00 253:2    0 37.5G  0 lvm  
+sdb                       8:16   0   10G  0 disk 
+└─vg_root-lv_root       253:0    0   10G  0 lvm  /
+sdc                       8:32   0    2G  0 disk 
+sdd                       8:48   0    1G  0 disk 
+sde                       8:64   0    1G  0 disk 
+[vagrant@lvm ~]$ lvremove /dev/VolGroup00/LogVol00
+  WARNING: Running as a non-root user. Functionality may be unavailable.
+  /run/lvm/lvmetad.socket: access failed: Permission denied
+  WARNING: Failed to connect to lvmetad. Falling back to device scanning.
+  /dev/mapper/control: open failed: Permission denied
+  Failure to communicate with kernel device-mapper driver.
+  Incompatible libdevmapper 1.02.146-RHEL7 (2018-01-22) and kernel driver (unknown version).
+  /run/lock/lvm/V_VolGroup00:aux: open failed: Permission denied
+  Can't get lock for VolGroup00
+  Cannot process volume group VolGroup00
+[vagrant@lvm ~]$ su
+Password: 
+[root@lvm vagrant]# lvremove /dev/VolGroup00/LogVol00
+Do you really want to remove active logical volume VolGroup00/LogVol00? [y/n]: y
+  Logical volume "LogVol00" successfully removed
+[root@lvm vagrant]# lvcreate -n VolGroup00/LogVol00 -L 8G /dev/VolGroup00
+WARNING: xfs signature detected on /dev/VolGroup00/LogVol00 at offset 0. Wipe it? [y/n]: y
+  Wiping xfs signature on /dev/VolGroup00/LogVol00.
+  Logical volume "LogVol00" created.
+[root@lvm vagrant]# lsblk
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                       8:0    0   40G  0 disk 
+├─sda1                    8:1    0    1M  0 part 
+├─sda2                    8:2    0    1G  0 part /boot
+└─sda3                    8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+  └─VolGroup00-LogVol00 253:2    0    8G  0 lvm  
+sdb                       8:16   0   10G  0 disk 
+└─vg_root-lv_root       253:0    0   10G  0 lvm  /
+sdc                       8:32   0    2G  0 disk 
+sdd                       8:48   0    1G  0 disk 
+sde                       8:64   0    1G  0 disk 
+[root@lvm vagrant]# mkfs.xfs /dev/VolGroup00/LogVol00
+meta-data=/dev/VolGroup00/LogVol00 isize=512    agcount=4, agsize=524288 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=2097152, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+[root@lvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt
+[root@lvm vagrant]# xfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt
+xfsdump: using file dump (drive_simple) strategy
+xfsdump: version 3.1.7 (dump format 3.0)
+xfsdump: level 0 dump of lvm:/
+xfsdump: dump date: Sat May 23 12:09:57 2020
+xfsdump: session id: 35aea97c-184c-4168-8791-bb4a92240e45
+xfsdump: session label: ""
+xfsrestore: using file dump (drive_simple) strategy
+xfsrestore: version 3.1.7 (dump format 3.0)
+xfsrestore: searching media for dump
+xfsdump: ino map phase 1: constructing initial dump list
+xfsdump: ino map phase 2: skipping (no pruning necessary)
+xfsdump: ino map phase 3: skipping (only one dump stream)
+xfsdump: ino map construction complete
+xfsdump: estimated dump size: 1716533568 bytes
+xfsdump: creating dump session media file 0 (media 0, file 0)
+xfsdump: dumping ino map
+xfsdump: dumping directories
+xfsrestore: examining media file 0
+xfsrestore: dump description: 
+xfsrestore: hostname: lvm
+xfsrestore: mount point: /
+xfsrestore: volume: /dev/mapper/vg_root-lv_root
+xfsrestore: session time: Sat May 23 12:09:57 2020
+xfsrestore: level: 0
+xfsrestore: session label: ""
+xfsrestore: media label: ""
+xfsrestore: file system id: c8b1ddc0-becc-49f0-b81e-9e0d9774f954
+xfsrestore: session id: 35aea97c-184c-4168-8791-bb4a92240e45
+xfsrestore: media id: 856e7fd3-f395-4102-91fa-a528f3f1e715
+xfsrestore: searching media for directory dump
+xfsrestore: reading directories
+xfsdump: dumping non-directory files
+xfsrestore: 7164 directories and 44750 entries processed
+xfsrestore: directory post-processing
+xfsrestore: restoring non-directory files
+xfsdump: ending media file
+xfsdump: media file size 1671804672 bytes
+xfsdump: dump size (non-dir files) : 1645133752 bytes
+xfsdump: dump complete: 49 seconds elapsed
+xfsdump: Dump Status: SUCCESS
+xfsrestore: restore complete: 49 seconds elapsed
+xfsrestore: Restore Status: SUCCESS
+[root@lvm vagrant]#  for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done
+[root@lvm vagrant]#  chroot /mnt/
+[root@lvm /]#  grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-862.2.3.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img
+done
+[root@lvm /]# cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo $i|sed "s/initramfs-//g; s/.img//g"` --force; done
+Executing: /usr/bin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64 --force
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
+dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
+dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
+dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
+dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
+*** Including module: bash ***
+*** Including module: nss-softokn ***
+*** Including module: i18n ***
+*** Including module: drm ***
+*** Including module: plymouth ***
+*** Including module: dm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 60-persistent-storage-dm.rules
+Skipping udev rule: 55-dm.rules
+*** Including module: kernel-modules ***
+Omitting driver floppy
+*** Including module: lvm ***
+Skipping udev rule: 64-device-mapper.rules
+Skipping udev rule: 56-lvm.rules
+Skipping udev rule: 60-persistent-storage-lvm.rules
+*** Including module: qemu ***
+*** Including module: resume ***
+*** Including module: rootfs-block ***
+*** Including module: terminfo ***
+*** Including module: udev-rules ***
+Skipping udev rule: 40-redhat-cpu-hotplug.rules
+Skipping udev rule: 91-permissions.rules
+*** Including module: biosdevname ***
+*** Including module: systemd ***
+*** Including module: usrmount ***
+*** Including module: base ***
+*** Including module: fs-lib ***
+*** Including module: shutdown ***
+*** Including modules done ***
+*** Installing kernel module dependencies and firmware ***
+*** Installing kernel module dependencies and firmware done ***
+*** Resolving executable dependencies ***
+*** Resolving executable dependencies done***
+*** Hardlinking files ***
+*** Hardlinking files done ***
+*** Stripping files ***
+*** Stripping files done ***
+*** Generating early-microcode cpio image contents ***
+*** No early-microcode cpio image needed ***
+*** Store current command line parameters ***
+*** Creating image file ***
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+[root@lvm boot]# pvcreate /dev/sdc /dev/sdd
+  Physical volume "/dev/sdc" successfully created.
+  Physical volume "/dev/sdd" successfully created.
+[root@lvm boot]# vgcreate vg_var /dev/sdc /dev/sdd
+  Volume group "vg_var" successfully created
+[root@lvm boot]# lvcreate -L 950M -m1 -n lv_var vg_var
+  Rounding up size to full physical extent 952.00 MiB
+  Logical volume "lv_var" created.
+[root@lvm boot]# mkfs.ext4 /dev/vg_var/lv_var
+mke2fs 1.42.9 (28-Dec-2013)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+60928 inodes, 243712 blocks
+12185 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=249561088
+8 block groups
+32768 blocks per group, 32768 fragments per group
+7616 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+[root@lvm boot]# mount /dev/vg_var/lv_var /mnt
+[root@lvm boot]# cp -aR /var/* /mnt/
+# rsync -avHPSAX /var/ /mnt/
+
+^C
+[root@lvm boot]# cp -aR /var/* /mnt/      # rsync -avHPSAX /var/ /mnt/
+cp: overwrite ‘/mnt/cache/ldconfig/aux-cache’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/base/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/base/mirrorlist.txt’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/base/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/base/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/base/f09552edffa70f49f553e411c2282fbccfffbeafa21e81e32622b103038b8bae-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/base/a4e2b46586aa556c3b6f814dad5b16db5a669984d66b68e873586cd7c7253301-c7-x86_64-comps.xml.gz’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/extras/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/extras/mirrorlist.txt’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/extras/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/extras/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/extras/42c5d8fe33ef3f1ab94d1ae257bc56201267d8af60132e3d778e586693e50a8f-primary.sqlite.bz2’? y
+ycp: overwrite ‘/mnt/cache/yum/x86_64/7/updates/gen/primary_db.sqlite’? 
+y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/updates/mirrorlist.txt’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/updates/repomd.xml’? y
+y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/updates/cachecookie’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/updates/0709d7c012a2c94be505951061a031eedd29ebfc769305446d45854b1920e25e-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-base/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-base/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-base/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-base/4b9ac2454536a901fecbc1a5ad080b0efd74680c6e1f4b28fb2c7ff419872418-c7-x86_64-comps.xml.gz’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-base/efa521576f53587de26616ea1e45f902993abcd9d67e707b8993b5f29bd15956-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-updates/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-updates/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-updates/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.0.1406-updates/a578182c962ccec1de01312f3bca77646f40c5f8ed587cc7a3b5d9229730234f-primary.sqlite.bz2’? y
+ycp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-base/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-base/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-base/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-base/0e6e90965f55146ba5025ea450f822d1bb0267d0299ef64dd4365825e6bad995-c7-x86_64-comps.xml.gz’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-base/9c92f78fb6f22491ea7414f5a844ad08c604139b151d4c702f2c0d6ae092c86f-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-updates/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-updates/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-updates/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.1.1503-updates/93b71f445d2ec2138d28152612f4fb29c8e76ee31f2666b964d88249b4e0a955-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-base/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-base/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-base/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-base/436345f4b666f0a461d479ccfabc2c22823d4f2173c2653e5250fea62f0afe98-c7-x86_64-comps.xml.gz’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-base/c6411f1cc8a000ed2b651b49134631d279abba1ec1f78e5dcca79a52d8c1eada-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-updates/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-updates/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-updates/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.2.1511-updates/1e5e6f28f65cae495ae491aa28709234f7569c0f5d350d356ca8ffb8c18afde9-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-base/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-base/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-base/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-base/c55e5b7bbe933fa8dac2cffca4596c265812b74ed12ef3968d487dd6eb22ad93-c7-x86_64-comps.xml.gz’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-base/bd50ff3d861cc21d254a390a963e9f0fd7b7b96ed9d31ece2f2b1997aa3a056f-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-updates/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-updates/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-updates/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.3.1611-updates/33fdce604445f67a26ce5ddc354ea0c835ed119ac8cb7404cc2b565bf80722a1-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-base/gen/primary_db.sqlite’? y
+y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-base/9346184be1deb727caf4b1ecf4a7949155da5da74af9b92c172687b290a773df-c7-x86_64-comps.xml.gz’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-base/repomd.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-base/cachecookie’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-base/0c34273ad0292747ee5e15c047d3e51c67ca59861a446972db45d71abacc7ad7-primary.sqlite.bz2’? y
+y
+y
+yy
+y
+y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-updates/gen/primary_db.sqlite’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-updates/repomd.xml’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-updates/cachecookie’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.4.1708-updates/61b17aa9329dbd5348d6d2f3592c5139a334dc0e876c6450334237c867b78c03-primary.sqlite.bz2’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.5.1804-base/gen/primary_db.sqlite’? y
+y
+y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.5.1804-base/repomd.xml’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.5.1804-base/cachecookie’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.5.1804-base/29b154c359eaf12b9e35d0d5c649ebd62ce43333f39f02f33ed7b08c3b927e20-c7-x86_64-comps.xml.gz’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.5.1804-base/03d0a660eb33174331aee3e077e11d4c017412d761b7f2eaa8555e7898e701e0-primary.sqlite.bz2’? cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.5.1804-updates/gen/prestodelta.xml’? y
+cp: overwrite ‘/mnt/cache/yum/x86_64/7/C7.5.1804-updates/gen/primary_db.sqlite’? y
+[root@lvm boot]# y
+bash: y: command not found
+[root@lvm boot]# mkdir /tmp/oldvar && mv /var/* /tmp/oldvar
+[root@lvm boot]# umount /mnt
+[root@lvm boot]# mount /dev/vg_var/lv_var /var
+[root@lvm boot]# echo "`blkid | grep var: | awk '{print $2}'` /var ext4 defaults 0 0" >> /etc/fstab
+[root@lvm boot]# reboot
+Running in chroot, ignoring request.
+[root@lvm boot]# exit
+exit
+[root@lvm vagrant]# reboot
+PolicyKit daemon disconnected from the bus.
+We are no longer a registered authentication agent.
+Connection to 127.0.0.1 closed by remote host.
+Connection to 127.0.0.1 closed.
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant ssh lvm
+ssh_exchange_identification: read: Connection reset by peer
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant ssh lvm
+ssh_exchange_identification: read: Connection reset by peer
+strayer@Stronghold:~/OTUS/dz3/stands-03-lvm$ vagrant ssh lvm
+Last login: Sat May 23 12:08:20 2020 from 10.0.2.2
+[vagrant@lvm ~]$ lvremove /dev/vg_root/lv_root
+  WARNING: Running as a non-root user. Functionality may be unavailable.
+  /run/lvm/lvmetad.socket: access failed: Permission denied
+  WARNING: Failed to connect to lvmetad. Falling back to device scanning.
+  /dev/mapper/control: open failed: Permission denied
+  Failure to communicate with kernel device-mapper driver.
+  Incompatible libdevmapper 1.02.146-RHEL7 (2018-01-22) and kernel driver (unknown version).
+  /run/lock/lvm/V_vg_root:aux: open failed: Permission denied
+  Can't get lock for vg_root
+  Cannot process volume group vg_root
+[vagrant@lvm ~]$ su
+Password: 
+[root@lvm vagrant]# lvremove /dev/vg_root/lv_root
+Do you really want to remove active logical volume vg_root/lv_root? [y/n]: y
+  Logical volume "lv_root" successfully removed
+[root@lvm vagrant]# vgremove /dev/vg_root
+  Volume group "vg_root" successfully removed
+[root@lvm vagrant]# pvremove /dev/sdb
+  Labels on physical volume "/dev/sdb" successfully wiped.
+[root@lvm vagrant]# lvcreate -n LogVol_Home -L 2G /dev/VolGroup00
+  Logical volume "LogVol_Home" created.
+[root@lvm vagrant]# mkfs.xfs /dev/VolGroup00/LogVol_Home
+meta-data=/dev/VolGroup00/LogVol_Home isize=512    agcount=4, agsize=131072 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0, sparse=0
+data     =                       bsize=4096   blocks=524288, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+[root@lvm vagrant]# mount /dev/VolGroup00/LogVol_Home /mnt/
+[root@lvm vagrant]# lsblk
+NAME                       MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                          8:0    0   40G  0 disk 
+├─sda1                       8:1    0    1M  0 part 
+├─sda2                       8:2    0    1G  0 part /boot
+└─sda3                       8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00    253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01    253:1    0  1.5G  0 lvm  [SWAP]
+  └─VolGroup00-LogVol_Home 253:2    0    2G  0 lvm  /mnt
+sdb                          8:16   0   10G  0 disk 
+sdc                          8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0    253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0   253:4    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sdd                          8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1    253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1   253:6    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sde                          8:64   0    1G  0 disk 
+[root@lvm vagrant]# cp -aR /home/* /mnt/   
+[root@lvm vagrant]# rm -rf /home/*
+[root@lvm vagrant]# umount /mnt
+[root@lvm vagrant]# mount /dev/VolGroup00/LogVol_Home /home/
+[root@lvm vagrant]# echo "`blkid | grep Home | awk '{print $2}'` /home xfs defaults 0 0" >> /etc/fstab
+[root@lvm vagrant]# touch /home/file{1..20}
+[root@lvm vagrant]# lvcreate -L 100MB -s -n home_snap /dev/VolGroup00/LogVol_Home
+  Rounding up size to full physical extent 128.00 MiB
+  Logical volume "home_snap" created.
+[root@lvm vagrant]# rm -f /home/file{11..20}
+[root@lvm vagrant]# umount /home
+[root@lvm vagrant]# lvconvert --merge /dev/VolGroup00/home_snap
+  Merging of volume VolGroup00/home_snap started.
+  VolGroup00/LogVol_Home: Merged: 100.00%
+[root@lvm vagrant]# mount /home
+[root@lvm vagrant]# дыидл
+bash: дыидл: command not found
+[root@lvm vagrant]# lsblk
+NAME                       MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                          8:0    0   40G  0 disk 
+├─sda1                       8:1    0    1M  0 part 
+├─sda2                       8:2    0    1G  0 part /boot
+└─sda3                       8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00    253:0    0    8G  0 lvm  /
+  ├─VolGroup00-LogVol01    253:1    0  1.5G  0 lvm  [SWAP]
+  └─VolGroup00-LogVol_Home 253:2    0    2G  0 lvm  /home
+sdb                          8:16   0   10G  0 disk 
+sdc                          8:32   0    2G  0 disk 
+├─vg_var-lv_var_rmeta_0    253:3    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_0   253:4    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sdd                          8:48   0    1G  0 disk 
+├─vg_var-lv_var_rmeta_1    253:5    0    4M  0 lvm  
+│ └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+└─vg_var-lv_var_rimage_1   253:6    0  952M  0 lvm  
+  └─vg_var-lv_var          253:7    0  952M  0 lvm  /var
+sde                          8:64   0    1G  0 disk 
+[root@lvm vagrant]# pwd
+/home/vagrant
+[root@lvm vagrant]# ls
+[root@lvm vagrant]# cd ..
+[root@lvm home]# ls
+file1   file11  file13  file15  file17  file19  file20  file4  file6  file8  vagrant
+file10  file12  file14  file16  file18  file2   file3   file5  file7  file9
+
