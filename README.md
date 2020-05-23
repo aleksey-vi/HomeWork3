@@ -1,6 +1,4 @@
 # HomeWork3
-## otus_3
-
 ## lvm homework
 
 На имеющемся образе centos/7 - v. 1804.21 (приложенный Vagrantfile)
